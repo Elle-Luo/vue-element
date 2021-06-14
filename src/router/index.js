@@ -5,6 +5,8 @@ Vue.use(VueRouter)
 
 const Login = () => import('../views/login/Login')
 const Home = () => import('../views/home/Home')
+const HomeIndex = () => import('../views/home/index')
+const Stats = () => import('../views/home/stats')
 
 const routes = [
   {
@@ -12,15 +14,27 @@ const routes = [
     redirect: '/home'
   },
   {
-    path: '/home',
-    name: 'home',
-    component: Home
-  },
-  {
     path: '/login',
     name: 'login',
     component: Login
-  }
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: Home,
+    children: [
+      {
+        path: '/index',
+        name: 'index',
+        component: HomeIndex
+      },
+      {
+        path: '/stats',
+        name: 'stats',
+        component: Stats
+      }
+    ]
+  },
 ]
 
 const router = new VueRouter({
