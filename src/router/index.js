@@ -3,10 +3,10 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const Login = () => import('../views/login/Login')
+const Login = () => import('../views/login')
 const Home = () => import('../views/home/Home')
-const HomeIndex = () => import('../views/home/index')
-const Stats = () => import('../views/home/stats')
+const HomeIndex = () => import('../views/home/index/index')
+const Stats = () => import('../views/home/stats/index')
 
 const routes = [
   {
